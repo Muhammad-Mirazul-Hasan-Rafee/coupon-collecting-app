@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import auth from "../firebase_init";
 
 const Login = () => {
 
-  const {signInUser} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const {signInUser , signInWithGoogle} = useContext(AuthContext);
 
   const handleLogin = (e) =>{
     e.preventDefault();
@@ -16,11 +17,24 @@ const Login = () => {
     signInUser(email , password)
     .then(result =>{
       console.log(result.user);
+      e.target.reset();
+      navigate('/');
     })
     .catch((error) => {
       console.log("ERROR", error.message);
     });
 
+  };
+
+  const handleGoogleSignIn = ()=>{
+    signInWithGoogle()
+    .then(result =>{
+      console.log(result.user);
+      navigate('/');
+    })
+    .catch(error => {
+      console.log('Error' , error.message);
+    })
   };
 
 
@@ -68,6 +82,7 @@ const Login = () => {
                   <button className="btn btn-primary">Login</button>
                 </div>
               </form>
+              <button onClick={handleGoogleSignIn} className="mt-4 btn-ghost">Login with Google</button>
             </div>
           </div>
         </div>

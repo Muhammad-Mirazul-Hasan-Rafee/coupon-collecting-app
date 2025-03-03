@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Profile = () => {
+const Profile = ({}) => {
     return (
         <div>
-            My profile
+            <h2 className='text-center'>Welcome to your profile</h2>
         </div>
     );
 };

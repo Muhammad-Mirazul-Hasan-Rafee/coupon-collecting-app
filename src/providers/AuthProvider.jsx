@@ -1,32 +1,37 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth/cordova";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase_init.js";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 
 
 export const AuthContext = createContext(null);
+const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user , setUser] = useState(null);
 
-  const [loading , setLoading] = useState(true);
+  const [loading , setLoading] = useState(true); //reload kora hocche tokhn loading suru hbe,
 
 
 
   const createUser = (email , password) =>{
     setLoading(true);
     return createUserWithEmailAndPassword(auth , email , password);
-  }
+  };
 
   const signInUser = (email , password) =>{
     setLoading(true);
     return signInWithEmailAndPassword(auth , email , password);
-  }
+  };
+
+  const signInWithGoogle = () =>{
+    return signInWithPopup(auth , googleProvider);
+  };
 
   const signOutUser = ()=>{
     setLoading(true);
     return signOut(auth);
-  }
+  };
 
   // onAuthStateChanged(auth , currentUser =>{
   //   if(currentUser){
@@ -43,7 +48,7 @@ const AuthProvider = ({ children }) => {
    const unSubscribe =  onAuthStateChanged(auth , currentUser =>{
       console.log('Current User Here' , currentUser);
       setUser(currentUser);
-      setLoading(false);// user peye gele false hbe
+      setLoading(false);// user peye gele false hbe.mane loading er kaj ses
     })
 
     return ()=> unSubscribe();
@@ -54,6 +59,7 @@ const AuthProvider = ({ children }) => {
       loading,
       createUser,
       signInUser,
+      signInWithGoogle,
       signOutUser,
   }
 

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const NavBar = ({user}) => {
+const NavBar = ({ user }) => {
   const links = (
     <>
       <li>
@@ -12,12 +12,12 @@ const NavBar = ({user}) => {
             <NavLink to="/brands">Brands</NavLink>
           </li>
 
-
+          <li>
+            <NavLink to="/profile">My Profile</NavLink>
+          </li>
         </>
       )}
-                <li>
-        <NavLink to="/profile">My Profile</NavLink>
-      </li>
+
       <li>
         <NavLink to="/about">About Dev</NavLink>
       </li>

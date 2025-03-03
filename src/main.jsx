@@ -16,14 +16,19 @@ import Login from './Components/Login.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import Coupon from './Components/Coupon.jsx';
 import PrivateRoutes from './Routes/PrivateRoutes.jsx';
+import Home from './Components/Home.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
     children: [
+      {
+        path:"/",
+        element:<Home></Home>
+      },
      {
       path: "/profile",
-      element:  <Profile></Profile>
+      element: <PrivateRoutes><Profile></Profile></PrivateRoutes>
      },
      {
       path: "/about",
