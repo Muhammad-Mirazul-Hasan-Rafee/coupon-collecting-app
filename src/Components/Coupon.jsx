@@ -1,32 +1,28 @@
+// private route will be added here
 import React from 'react';
-import Coupon from './Coupon';
 
-const Brands = () => {
+const Coupon = () => {
     return (
         <div>
-            This is a brands
-           <br />
-           <div>
             <ul>
                 <li>
-                   item1
+                   qq
                 </li>
                 <li>
-                    item2
+                    ww
                 </li>
                 <li>
-                 item3
+                   ee
                 </li>
                 <li>
-                   item4
+                   eeef
                 </li>
                 <li>
-                   item5
+                   gfrsdg
                 </li>
             </ul>
-        </div>
         </div>
     );
 };
 
-export default Brands;
+export default Coupon;

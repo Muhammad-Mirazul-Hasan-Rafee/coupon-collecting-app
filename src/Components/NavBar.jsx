@@ -1,18 +1,21 @@
-
 import { NavLink } from "react-router-dom";
 
-
-
-const NavBar = () => {
+const NavBar = ({user}) => {
   const links = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/brands">Brands</NavLink>
-      </li>
-      <li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/brands">Brands</NavLink>
+          </li>
+
+
+        </>
+      )}
+                <li>
         <NavLink to="/profile">My Profile</NavLink>
       </li>
       <li>
@@ -53,9 +56,7 @@ const NavBar = () => {
 
       {/* Centered links for larger screens */}
       <div className="navbar-center flex justify-center w-full lg:flex">
-        <ul className="menu menu-horizontal gap-4">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal gap-4">{links}</ul>
       </div>
     </div>
   );

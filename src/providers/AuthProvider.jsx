@@ -1,19 +1,60 @@
-import { createUserWithEmailAndPassword } from "firebase/auth/cordova";
-import { createContext } from "react";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth/cordova";
+import { createContext, useEffect, useState } from "react";
 import auth from "../firebase_init.js";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
-  const name = 'Rafee';
+  const [user , setUser] = useState(null);
+
+  const [loading , setLoading] = useState(true);
+
+
 
   const createUser = (email , password) =>{
+    setLoading(true);
     return createUserWithEmailAndPassword(auth , email , password);
   }
 
+  const signInUser = (email , password) =>{
+    setLoading(true);
+    return signInWithEmailAndPassword(auth , email , password);
+  }
+
+  const signOutUser = ()=>{
+    setLoading(true);
+    return signOut(auth);
+  }
+
+  // onAuthStateChanged(auth , currentUser =>{
+  //   if(currentUser){
+  //     console.log('Currently logged in user' , currentUser);
+  //     setUser(currentUser);
+  //   }
+  //   else{
+  //     console.log('No user logged in!');
+  //     setUser(null); 
+  // }
+  // })
+
+  useEffect(()=>{
+   const unSubscribe =  onAuthStateChanged(auth , currentUser =>{
+      console.log('Current User Here' , currentUser);
+      setUser(currentUser);
+      setLoading(false);// user peye gele false hbe
+    })
+
+    return ()=> unSubscribe();
+  }, []);
+
   const authInfo = {
-      name,
-      createUser
+      user,
+      loading,
+      createUser,
+      signInUser,
+      signOutUser,
   }
 
   return (
@@ -21,5 +62,5 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-// ✅ Export both AuthContext and AuthProvider
+
 export default AuthProvider;

@@ -14,18 +14,16 @@ import About from './Components/About.jsx';
 import Register from './Components/Register.jsx';
 import Login from './Components/Login.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
+import Coupon from './Components/Coupon.jsx';
+import PrivateRoutes from './Routes/PrivateRoutes.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
     children: [
      {
-      path:"/brands",
-      element:<Brands></Brands>
-     },
-     {
       path: "/profile",
-      element: <Profile></Profile>
+      element:  <Profile></Profile>
      },
      {
       path: "/about",
@@ -38,6 +36,10 @@ const router = createBrowserRouter([
      {
        path: "/login",
        element: <Login></Login>
+     },
+     {
+      path: "/brands",
+      element: <PrivateRoutes><Brands></Brands></PrivateRoutes>
      }
     ]
   },
