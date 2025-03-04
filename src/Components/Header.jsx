@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import { signOut } from "firebase/auth/cordova";
+
 
 const Header = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -18,12 +18,14 @@ const Header = () => {
   };
 
   console.log(user);
+  const userEmail = user?.email || "";
+  const userName = userEmail.split("@")[0];
 
   return (
     <div>
       <div className="flex justify-between items-center">
-        <a className="btn btn-ghost text-xl">daisyUI</a>
-        <h2 className="flex-grow text-center">Welcome Here in Header</h2>
+        <a className="btn btn-ghost text-xl">Logo</a>
+        <h4 className="text-center ml-28">{user ? `Welcome ${userName}` : ""}</h4>
         <div>
           {user ? (
             <>

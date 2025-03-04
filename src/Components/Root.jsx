@@ -6,8 +6,7 @@ const Root = () => {
     return (
         <div>
             <Header></Header>
-            <Outlet>
-            </Outlet>
+            <Outlet></Outlet>
             <Footer></Footer>
         </div>
     );
