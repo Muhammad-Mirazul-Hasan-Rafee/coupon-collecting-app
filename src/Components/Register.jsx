@@ -1,8 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
+
+  const [errorMessage , setErrorMessage] = useState('');
+
+
   const navigate = useNavigate();
   const { createUser } = useContext(AuthContext);
 
@@ -12,6 +16,8 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(name, email, password);
+    e.target.reset();
+    setErrorMessage('');
 
     // create user
     createUser(email, password)
@@ -22,6 +28,7 @@ const Register = () => {
       })
       .catch((error) => {
         console.log("ERROR", error.message);
+        setErrorMessage(error.message);
       });
   };
 
@@ -90,6 +97,9 @@ const Register = () => {
               <button className="btn btn-primary">Register</button>
             </div>
           </form>
+          {
+            errorMessage && <p>{errorMessage}</p>
+          }
         </div>
       </div>
     </div>
