@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaEye } from "react-icons/fa";
 import { LuEyeClosed } from "react-icons/lu";
-
+import { getAuth, updateProfile } from "firebase/auth";
+const auth = getAuth();
 const Register = () => {
   const [success, setSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -16,9 +17,12 @@ const Register = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
+    const photo = e.target.photo.value ;
     const password = e.target.password.value;
+
     const terms = e.target.terms.checked; //check- check korbe j click ache kina. click hole true hbe
-    console.log(name, email, password);
+
+    console.log(name, email, photo , password);
 
     // input field and error message clear
     e.target.reset();
@@ -41,21 +45,35 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         setSuccess(true);
-        e.target.reset();
+        //e.target.reset();
         navigate("/");
+
+        // update profile name and photo
+        const profile = {
+          displayName: name,
+          photoURL : photo,
+        }
+        updateProfile(auth.currentUser , profile)
+        .then(()=>{
+          console.log('user profile updated!')
+        })
+        .catch(error => console.log('opps!! user profile updation ERROR!' , error.message));
+
       })
+
       .catch((error) => {
         console.log("ERROR", error.message);
         setSuccess(false);
         setErrorMessage(error.message);
       });
+
   };
 
   return (
     <div>
       <h2>Register here</h2>
       <div className="flex justify-center mt-4 mb-4">
-        <div className=" border border-red-500 card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -87,6 +105,7 @@ const Register = () => {
               </label>
               <input
                 type="text"
+                name="photo"
                 placeholder="Photo URL"
                 className="input input-bordered"
                 required

@@ -18,20 +18,21 @@ const Header = () => {
   };
 
   console.log(user);
-  const userEmail = user?.email || "";
-  const userName = userEmail.split("@")[0];
+  // const userEmail = user?.email || "";
+  // const userName = userEmail.split("@")[0];
 
   return (
     <div>
       <div className="flex justify-between items-center">
         <a className="btn btn-ghost text-xl">Logo</a>
-        <h4 className="text-center ml-28">{user ? `Welcome ${userName}` : ""}</h4>
+        <h4 className="text-center ml-28 mb-[116px] text-2xl text-slate-700">{user ? `Welcome ${user.displayName}` : ""}</h4>
         <div>
           {user ? (
-            <>
+            <div className="grid grid-rows-1 gap-y-2"> 
               <span>{user.email}</span>
+              <img className="w-28 h-16 rounded-full ml-8" src={user.photoURL} alt="" />
               <a onClick={handleSignOut} className="btn">Sign Out</a>
-            </>
+            </div>
           ) : (
             <>
               <Link to="/register" className="btn">
