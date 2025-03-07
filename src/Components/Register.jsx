@@ -17,20 +17,20 @@ const Register = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
-    const photo = e.target.photo.value ;
+    const photo = e.target.photo.value;
     const password = e.target.password.value;
 
     const terms = e.target.terms.checked; //check- check korbe j click ache kina. click hole true hbe
 
-    console.log(name, email, photo , password);
+    console.log(name, email, photo, password);
 
     // input field and error message clear
     e.target.reset();
     setErrorMessage("");
     setSuccess(false);
 
-    if(!terms){
-      setErrorMessage('Please accept terms and conditions!');
+    if (!terms) {
+      setErrorMessage("Please accept terms and conditions!");
       return; // r samne egiye jete deya hobe na ejnno ekhanei return kore felbo ha ha ha hi hi hi !!
     }
 
@@ -51,14 +51,15 @@ const Register = () => {
         // update profile name and photo
         const profile = {
           displayName: name,
-          photoURL : photo,
-        }
-        updateProfile(auth.currentUser , profile)
-        .then(()=>{
-          console.log('user profile updated!')
-        })
-        .catch(error => console.log('opps!! user profile updation ERROR!' , error.message));
-
+          photoURL: photo,
+        };
+        updateProfile(auth.currentUser, profile)
+          .then(() => {
+            console.log("user profile updated!");
+          })
+          .catch((error) =>
+            console.log("opps!! user profile updation ERROR!", error.message)
+          );
       })
 
       .catch((error) => {
@@ -66,7 +67,6 @@ const Register = () => {
         setSuccess(false);
         setErrorMessage(error.message);
       });
-
   };
 
   return (
@@ -137,12 +137,16 @@ const Register = () => {
                 </p>
               </label>
             </div>
-            
-              <label className="fieldset-label space-x-2 justify-start">
-                <input type="checkbox" name="terms" className="checkbox-secondary" />
-                <span>Accept terms and conditions</span>
-              </label>
-        
+
+            <label className="fieldset-label space-x-2 justify-start">
+              <input
+                type="checkbox"
+                name="terms"
+                className="checkbox-secondary"
+              />
+              <span>Accept terms and conditions</span>
+            </label>
+
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>

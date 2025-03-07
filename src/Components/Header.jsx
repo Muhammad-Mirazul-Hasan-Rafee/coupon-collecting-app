@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-
+import logo from '../assets/images/sitelogo.png';
 
 const Header = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -24,8 +24,8 @@ const Header = () => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <a className="btn btn-ghost text-xl">Logo</a>
-        <h4 className="text-center ml-28 mb-[116px] text-2xl text-slate-700">{user ? `Welcome ${user.displayName}` : ""}</h4>
+        <Link to='/' className="btn btn-ghost text-xl h-[80px] w-[90px] rounded-3xl"><img src={logo} alt="" /></Link>
+        <h4 className="text-center ml-28 mb-[116px] text-2xl font-bold text-[#e2d135]">{user ? `Welcome ${user.displayName}` : ""}</h4>
         <div>
           {user ? (
             <div className="grid grid-rows-1 gap-y-2"> 

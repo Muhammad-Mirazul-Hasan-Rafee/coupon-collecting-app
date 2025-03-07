@@ -12,11 +12,11 @@ const Swiper = () => {
         slidesToScroll: 3
       };
   return (
-    <div className="w-3/4 m-auto">
+    <div className="w-3/4 m-auto mb-24">
       <div className="mt-20">
       <Slider {...settings}>
         {Data.map((e) => (
-          <div className="bg-white h-[300px] text-black rounded-xl">
+          <div className="bg-[#2e303d] h-[300px] text-black rounded-xl">
             <div className="h-56 rounded-t-xl bg-[#2e303d] flex justify-center items-center">
               <img className="h-44 w-44" src={e.brand_logo} alt="" />
             </div>
