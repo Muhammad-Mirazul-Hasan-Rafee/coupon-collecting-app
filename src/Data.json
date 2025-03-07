@@ -23,6 +23,7 @@
     ],
     "shop-Link": "https://fashionhub.com",
     "category": "Fashion",
+    "quantity" : "5",
     "isSaleOn": true
   },
   {
@@ -49,6 +50,7 @@
     ],
     "shop-Link": "https://techbazaar.com",
     "category": "Electronics",
+    "quantity" : "14",
     "isSaleOn": false
   },
   {
@@ -75,6 +77,7 @@
     ],
     "shop-Link": "https://homeessentials.com",
     "category": "Home & Living",
+    "quantity" : "8",
     "isSaleOn": true
   },
   {
@@ -101,6 +104,7 @@
     ],
     "shop-Link": "https://fitgear.com",
     "category": "Fitness",
+    "quantity" : "20",
     "isSaleOn": true
   },
   {
@@ -127,6 +131,7 @@
     ],
     "shop-Link": "https://booknest.com",
     "category": "Books",
+    "quantity" : "8",
     "isSaleOn": false
   },
   {
@@ -153,6 +158,7 @@
     ],
     "shop-Link": "https://petparadise.com",
     "category": "Pets",
+    "quantity" : "7",
     "isSaleOn": true
   }
 ]
