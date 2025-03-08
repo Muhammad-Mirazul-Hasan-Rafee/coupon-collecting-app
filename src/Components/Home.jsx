@@ -1,13 +1,10 @@
-import React from "react";
 import Swiper from "./Swiper";
 import Marquee from "react-fast-marquee";
 import data from "../Data.json";
 import { Link } from "react-router-dom";
 const Home = () => {
-  // const handleLogo =(id)=>{
-  //   navigate('/brands');
-  // };
-
+  const brandsOnSell = data.filter((brand) => brand.isSaleOn); //ekta property niye kaj korar somoy filter use korte hbe and brand.isSaleOn itself true value return kore by default
+  
   return (
     <div>
       <Swiper></Swiper>
@@ -41,23 +38,23 @@ const Home = () => {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6 ">
-      {data.map((idx) => (
+      {brandsOnSell.map((brand) => (
         <div className="w-44 h-48 bg-[#21243f]  shadow-2xl mx-auto">
           <div
-            key={idx.id}
+            key={brand.id}
             className="w-44 h-48 mt-2 text-center text-white shadow-2xl"
           >
             <img
               className="w-14 h-14 mx-auto rounded-xl"
-              src={idx.brand_logo}
+              src={brand.brand_logo}
               alt=""
             />
-            <h4 className="text-xl font-semibold">{idx.brand_name}</h4>
+            <h4 className="text-xl font-semibold">{brand.brand_name}</h4>
             <h5 className="mt-6">
               Total Coupons: {""}
-              <span className="font-semibold">{idx.quantity}</span>
+              <span className="font-semibold">{brand.quantity}</span>
             </h5>
-            <p className="font-bold">{idx.category}</p>
+            <p className="font-bold">{brand.category}</p>
           </div>
         </div>
       ))}

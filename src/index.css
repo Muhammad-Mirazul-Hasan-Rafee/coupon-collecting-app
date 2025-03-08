@@ -2,12 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    body{
-        background-color: white;
-    }
-
+@layer base {
+  body {
+    background-color: white;
+  }
 }
-.slick-slide > div{
-    margin: 0 10px;
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+/* Target the default previous arrow */
+.slick-prev:before {
+  content: "‹"; 
+  font-weight: bold; 
+  font-size: 32px; 
+  color: rgb(35, 15, 71); 
+  background-color: black;
+  border-radius: 100%;
+  
+}
+
+/* Target the default next arrow */
+.slick-next:before {
+  content: "›";
+  font-weight: bold;
+  font-size: 32px; 
+  color: rgb(35, 15, 71);
+  background-color: black;
+  border-radius: 100%;
 }

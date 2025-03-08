@@ -24,9 +24,9 @@ const Header = () => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <Link to='/' className="btn btn-ghost text-xl h-[80px] w-[90px] rounded-3xl"><img src={logo} alt="" /></Link>
+        <Link to='/' className="btn btn-ghost text-xl bg-[#d4a02e] mx-auto h-[80px] w-[90px] rounded-3xl"><img src={logo} alt="" /></Link>
         <h4 className="text-center mt-6 ml-28 mb-[116px] text-2xl font-bold text-[#21243f]">{user ? `Welcome ${user.displayName}` : ""}</h4>
-        <div>
+        <div className="mx-auto">
           {user ? (
             <div className="grid grid-rows-1 gap-y-2"> 
               <span>{user.email}</span>

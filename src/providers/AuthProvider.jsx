@@ -54,6 +54,18 @@ const AuthProvider = ({ children }) => {
     return ()=> unSubscribe();
   }, []);
 
+  // fetch data
+  useEffect(()=>{
+    fetch('Data.json')
+    .then(res => res.json())
+    .then(data =>
+      {console.log(data);}
+    )
+    .catch(error => console.log(error))
+  },[]);
+
+
+
   const authInfo = {
       user,
       loading,

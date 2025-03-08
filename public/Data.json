@@ -1,0 +1,164 @@
+[
+  {
+    "id": "1",
+    "brand_name": "FashionHub",
+    "rating": 4.5,
+    "description": "Your one-stop shop for trendy fashion and accessories.",
+    "brand_logo": "https://i.ibb.co.com/s9992GyC/fashionhub.png",
+    "coupons": [
+      {
+        "coupon-code": "FH20OFF",
+        "description": "Get 20% off on all orders above $50.",
+        "expiry-date": "2023-12-31",
+        "condition": "Minimum purchase of $50 required.",
+        "coupon_type": "Percentage Discount"
+      },
+      {
+        "coupon-code": "FREESHIP",
+        "description": "Free shipping on all orders.",
+        "expiry-date": "2023-11-15",
+        "condition": "No minimum purchase required.",
+        "coupon_type": "Free Shipping"
+      }
+    ],
+    "shop-Link": "https://fashionhub.com",
+    "category": "Fashion",
+    "quantity" : "5",
+    "isSaleOn": true
+  },
+  {
+    "id": "2",
+    "brand_name": "TechBazaar",
+    "rating": 4.7,
+    "description": "Latest tech gadgets and electronics at unbeatable prices.",
+    "brand_logo": "https://i.ibb.co.com/ZzkhwjVZ/techbazar.png",
+    "coupons": [
+      {
+        "coupon-code": "TB15OFF",
+        "description": "15% off on all electronics.",
+        "expiry-date": "2023-10-30",
+        "condition": "Valid only on select items.",
+        "coupon_type": "Percentage Discount"
+      },
+      {
+        "coupon-code": "CASHBACK10",
+        "description": "Get $10 cashback on orders above $100.",
+        "expiry-date": "2023-11-20",
+        "condition": "Minimum purchase of $100 required.",
+        "coupon_type": "Cashback"
+      }
+    ],
+    "shop-Link": "https://techbazaar.com",
+    "category": "Electronics",
+    "quantity" : "14",
+    "isSaleOn": false
+  },
+  {
+    "id": "3",
+    "brand_name": "HomeEssentials",
+    "rating": 4.2,
+    "description": "Everything you need to make your home cozy and stylish.",
+    "brand_logo": "https://i.ibb.co.com/6c0qQpX4/home-essentials.jpg",
+    "coupons": [
+      {
+        "coupon-code": "HELLO10",
+        "description": "$10 off on your first order.",
+        "expiry-date": "2023-12-01",
+        "condition": "New customers only.",
+        "coupon_type": "Fixed Discount"
+      },
+      {
+        "coupon-code": "FREEDEL",
+        "description": "Free delivery on all orders.",
+        "expiry-date": "2023-11-30",
+        "condition": "No minimum purchase required.",
+        "coupon_type": "Free Delivery"
+      }
+    ],
+    "shop-Link": "https://homeessentials.com",
+    "category": "Home & Living",
+    "quantity" : "8",
+    "isSaleOn": true
+  },
+  {
+    "id": "4",
+    "brand_name": "FitGear",
+    "rating": 4.6,
+    "description": "Premium fitness gear and apparel for your active lifestyle.",
+    "brand_logo": "https://i.ibb.co.com/60xVSQWv/fitgear.jpg",
+    "coupons": [
+      {
+        "coupon-code": "FIT25",
+        "description": "25% off on all fitness equipment.",
+        "expiry-date": "2023-11-25",
+        "condition": "Valid only on selected categories.",
+        "coupon_type": "Percentage Discount"
+      },
+      {
+        "coupon-code": "FREESHIPFIT",
+        "description": "Free shipping on orders above $75.",
+        "expiry-date": "2023-12-10",
+        "condition": "Minimum purchase of $75 required.",
+        "coupon_type": "Free Shipping"
+      }
+    ],
+    "shop-Link": "https://fitgear.com",
+    "category": "Fitness",
+    "quantity" : "20",
+    "isSaleOn": true
+  },
+  {
+    "id": "5",
+    "brand_name": "BookNest",
+    "rating": 4.8,
+    "description": "Discover a world of books for every reader.",
+    "brand_logo": "https://i.ibb.co.com/ShwnbgJ/booknest.png",
+    "coupons": [
+      {
+        "coupon-code": "READMORE",
+        "description": "Buy 2, get 1 free on all fiction books.",
+        "expiry-date": "2023-11-30",
+        "condition": "Applicable only on selected titles.",
+        "coupon_type": "Buy More, Save More"
+      },
+      {
+        "coupon-code": "FREESHIPBOOK",
+        "description": "Free shipping on all orders.",
+        "expiry-date": "2023-12-15",
+        "condition": "No minimum purchase required.",
+        "coupon_type": "Free Shipping"
+      }
+    ],
+    "shop-Link": "https://booknest.com",
+    "category": "Books",
+    "quantity" : "8",
+    "isSaleOn": false
+  },
+  {
+    "id": "6",
+    "brand_name": "PetParadise",
+    "rating": 4.4,
+    "description": "Everything your furry friends need to stay happy and healthy.",
+    "brand_logo": "https://i.ibb.co.com/G4YM9k10/petparadise.png",
+    "coupons": [
+      {
+        "coupon-code": "PETLOVE",
+        "description": "10% off on all pet food and treats.",
+        "expiry-date": "2023-12-20",
+        "condition": "No minimum purchase required.",
+        "coupon_type": "Percentage Discount"
+      },
+      {
+        "coupon-code": "FREESHIPPET",
+        "description": "Free shipping on orders above $50.",
+        "expiry-date": "2023-11-25",
+        "condition": "Minimum purchase of $50 required.",
+        "coupon_type": "Free Shipping"
+      }
+    ],
+    "shop-Link": "https://petparadise.com",
+    "category": "Pets",
+    "quantity" : "7",
+    "isSaleOn": true
+  }
+]
