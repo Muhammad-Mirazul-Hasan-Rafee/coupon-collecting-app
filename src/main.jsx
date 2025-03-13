@@ -9,6 +9,7 @@ import {
 import Root from './Components/Root.jsx';
 import Header from './Components/Header.jsx';
 import Brands from './Components/Brands.jsx';
+import BrandDetails from './Components/BrandDetails.jsx';
 import Profile from './Components/Profile.jsx';
 import About from './Components/About.jsx';
 import Register from './Components/Register.jsx';
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
      {
       path: "/brands",
       element: <PrivateRoutes><Brands></Brands></PrivateRoutes>
+     },
+     {
+      path: "/brandDetails",
+      element:<PrivateRoutes><BrandDetails></BrandDetails></PrivateRoutes>
      }
     ]
   },

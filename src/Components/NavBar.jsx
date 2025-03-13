@@ -11,6 +11,9 @@ const NavBar = ({ user }) => {
           <li>
             <NavLink to="/brands">Brands</NavLink>
           </li>
+          <li>
+            <NavLink to="/brandDetails">Brand Details</NavLink>
+          </li>
 
           <li>
             <NavLink to="/profile">My Profile</NavLink>
