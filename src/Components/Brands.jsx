@@ -1,14 +1,18 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import cards from '../Data.json';
+import { useContext } from 'react'; // Import useContext
+import { AuthContext } from '../providers/AuthProvider'; // Import AuthContext
 
-const Brands = ({ user }) => {
-  const navigate = useNavigate(); // Initialize the navigate function
+const Brands = () => {
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext); // Access user from AuthContext
 
-  const handleViewCoupons = () => {
+  const handleViewCoupons = (brandId) => {
+    console.log('Navigating to brand details with ID:', brandId); // Debugging
     if (user) {
-      // Redirect to brand details route
-      navigate('/brandDetails');
+      // Navigate to the dynamic route with brandId
+      navigate(`/brandDetails/${brandId}`);
     } else {
       // Redirect to login if user is not logged in
       navigate('/login');
@@ -22,16 +26,6 @@ const Brands = ({ user }) => {
       </h3>
       <div className="mockup-browser border-base-300 border w-full flex justify-center mt-4">
         <div className="mockup-browser-toolbar flex items-center gap-2 p-2">
-          {/* Hide the three dots */}
-          <div className="hidden">
-            <div className="flex gap-1">
-              <div className="w-2 h-2 rounded-full bg-base-300"></div>
-              <div className="w-2 h-2 rounded-full bg-base-300"></div>
-              <div className="w-2 h-2 rounded-full bg-base-300"></div>
-            </div>
-          </div>
-
-          {/* Search box and button */}
           <div className="flex flex-1 items-center gap-2">
             <input
               type="text"
@@ -69,7 +63,7 @@ const Brands = ({ user }) => {
           <p className="text-center text-gray-600">{card.description}</p>
 
           {/* Sale is On (Bouncing Text) */}
-          {card.saleIsOn && (
+          {card.isSaleOn && (
             <div className="animate-bounce text-green-600 font-bold">
               🎉 Sale is on! 🎉
             </div>
@@ -78,7 +72,7 @@ const Brands = ({ user }) => {
           {/* View Coupons Button */}
           <button
             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
-            onClick={handleViewCoupons} // Call handleViewCoupons on click
+            onClick={() => handleViewCoupons(card.id)} // Pass brandId to handleViewCoupons
           >
             View Coupons
           </button>

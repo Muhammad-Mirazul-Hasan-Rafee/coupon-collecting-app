@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase_init.js";
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
+import cards from "../Data.json";
 
 
 export const AuthContext = createContext(null);
@@ -63,6 +64,8 @@ const AuthProvider = ({ children }) => {
     )
     .catch(error => console.log(error))
   },[]);
+
+
 
 
 

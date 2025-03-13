@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import auth from "../firebase_init";
 
 const Login = () => {
 
@@ -41,15 +40,11 @@ const Login = () => {
       console.log('Error' , error.message);
     })
   };
-
-
-
-
     return (
         <div>
-          <h2>Login here</h2>
+          <h2 className="text-center text-[#1d1836] font-bold">Login here</h2>
           <div className="flex justify-center mt-4 mb-4">
-            <div className=" border border-red-500 card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <div className=" card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
               <form onSubmit={handleLogin} className="card-body">
     
                 <div className="form-control">
