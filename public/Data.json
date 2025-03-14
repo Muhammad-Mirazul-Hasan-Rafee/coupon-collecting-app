@@ -9,14 +9,14 @@
       {
         "coupon-code": "FH20OFF",
         "description": "Get 20% off on all orders above $50.",
-        "expiry-date": "2023-12-31",
+        "expiry-date": "2025-12-31",
         "condition": "Minimum purchase of $50 required.",
         "coupon_type": "Percentage Discount"
       },
       {
         "coupon-code": "FREESHIP",
         "description": "Free shipping on all orders.",
-        "expiry-date": "2023-11-15",
+        "expiry-date": "2025-11-15",
         "condition": "No minimum purchase required.",
         "coupon_type": "Free Shipping"
       }
@@ -36,14 +36,14 @@
       {
         "coupon-code": "TB15OFF",
         "description": "15% off on all electronics.",
-        "expiry-date": "2023-10-30",
+        "expiry-date": "2025-10-30",
         "condition": "Valid only on select items.",
         "coupon_type": "Percentage Discount"
       },
       {
         "coupon-code": "CASHBACK10",
         "description": "Get $10 cashback on orders above $100.",
-        "expiry-date": "2023-11-20",
+        "expiry-date": "2025-11-20",
         "condition": "Minimum purchase of $100 required.",
         "coupon_type": "Cashback"
       }
@@ -63,14 +63,14 @@
       {
         "coupon-code": "HELLO10",
         "description": "$10 off on your first order.",
-        "expiry-date": "2023-12-01",
+        "expiry-date": "2025-12-01",
         "condition": "New customers only.",
         "coupon_type": "Fixed Discount"
       },
       {
         "coupon-code": "FREEDEL",
         "description": "Free delivery on all orders.",
-        "expiry-date": "2023-11-30",
+        "expiry-date": "2025-11-30",
         "condition": "No minimum purchase required.",
         "coupon_type": "Free Delivery"
       }
@@ -90,14 +90,14 @@
       {
         "coupon-code": "FIT25",
         "description": "25% off on all fitness equipment.",
-        "expiry-date": "2023-11-25",
+        "expiry-date": "2025-11-25",
         "condition": "Valid only on selected categories.",
         "coupon_type": "Percentage Discount"
       },
       {
         "coupon-code": "FREESHIPFIT",
         "description": "Free shipping on orders above $75.",
-        "expiry-date": "2023-12-10",
+        "expiry-date": "2025-12-10",
         "condition": "Minimum purchase of $75 required.",
         "coupon_type": "Free Shipping"
       }
@@ -117,14 +117,14 @@
       {
         "coupon-code": "READMORE",
         "description": "Buy 2, get 1 free on all fiction books.",
-        "expiry-date": "2023-11-30",
+        "expiry-date": "2025-11-30",
         "condition": "Applicable only on selected titles.",
         "coupon_type": "Buy More, Save More"
       },
       {
         "coupon-code": "FREESHIPBOOK",
         "description": "Free shipping on all orders.",
-        "expiry-date": "2023-12-15",
+        "expiry-date": "2025-12-15",
         "condition": "No minimum purchase required.",
         "coupon_type": "Free Shipping"
       }
@@ -144,14 +144,14 @@
       {
         "coupon-code": "PETLOVE",
         "description": "10% off on all pet food and treats.",
-        "expiry-date": "2023-12-20",
+        "expiry-date": "2025-12-20",
         "condition": "No minimum purchase required.",
         "coupon_type": "Percentage Discount"
       },
       {
         "coupon-code": "FREESHIPPET",
         "description": "Free shipping on orders above $50.",
-        "expiry-date": "2023-11-25",
+        "expiry-date": "2025-11-25",
         "condition": "Minimum purchase of $50 required.",
         "coupon_type": "Free Shipping"
       }

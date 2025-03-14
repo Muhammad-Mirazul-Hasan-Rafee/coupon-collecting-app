@@ -5,13 +5,13 @@ import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 
 const BrandDetails = () => {
-  const { user } = useContext(AuthContext); // Access user from AuthContext
+  const { user } = useContext(AuthContext); 
   const { id } = useParams(); // Extract id from the URL
-  console.log('Extracted ID from URL:', id); // Debugging
+ 
 
-  // Find the brand with the matching id
+  // Finding the brand with the matching id
   const brand = cards.find((card) => card.id === id);
-  console.log('Found Brand:', brand); // Debugging
+ 
 
   // If brand is not found, show an error message
   if (!brand) {

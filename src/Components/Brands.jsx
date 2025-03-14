@@ -1,15 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import cards from '../Data.json';
-import { useContext } from 'react'; // Import useContext
-import { AuthContext } from '../providers/AuthProvider'; // Import AuthContext
+import { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProvider'; 
 
 const Brands = () => {
   const navigate = useNavigate();
-  const { user } = useContext(AuthContext); // Access user from AuthContext
+  const { user } = useContext(AuthContext);
 
   const handleViewCoupons = (brandId) => {
-    console.log('Navigating to brand details with ID:', brandId); // Debugging
     if (user) {
       // Navigate to the dynamic route with brandId
       navigate(`/brandDetails/${brandId}`);

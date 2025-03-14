@@ -11,7 +11,6 @@ import About from "./Components/About.jsx";
 import Register from "./Components/Register.jsx";
 import Login from "./Components/Login.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
-import Coupon from "./Components/Coupon.jsx";
 import PrivateRoutes from "./Routes/PrivateRoutes.jsx";
 import Home from "./Components/Home.jsx";
 import ErrorPage from "./Components/ErrorPage.jsx";
